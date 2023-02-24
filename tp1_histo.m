@@ -1,5 +1,9 @@
 function [A, B] = tp1_histo(imgPath, show)
     I = imread(imgPath);
+    if (ndims(I)==3) 
+        I = rgb2gray(I);
+    end
+    
     if (show)
         figure
         imhist(I);
